@@ -8,6 +8,7 @@ sort(x1)
 plot(density(x2))
 
 
+
 #Matrices
 (m1 = matrix(1:12, nrow=4))
 (m2 = matrix(1:12, ncol=4,byrow = T))
@@ -48,7 +49,42 @@ addmargins(m1, c(1,2), list(list(mean,sum,max),list(var,sd))) #row and column wi
 
 
 #data Frame
+(rollno = 1:30)
+(sname = paste("Student", 1:30, sep=''))
+(gender = sample(c('M','F'), size = 30, replace=T, prob = c(.7,.3)))
+(marks = floor(rnorm(30,mean=50,sd=10)))
+(marks2 = ceiling(rnorm(30,40,5)))
+(course = sample(c("BBA","MBA"), size = 30, replace=T, prob = c(.5,.5)))
+df1 = data.frame(rollno,sname,gender,marks,marks2,course, stringsAsFactors= F)
+?data.frame
+str(df1)
+df1
+head(df1)
+tail(df1)
+summary(df1)
+df1$gender=factor(df1$gender)
+df1$course=factor(df1$course)
 
+summary(df1)
+set.seed(1234)
+(grade = sample(c('A','B','C','D'),size=30,replace=T,prob=c(.4,.2,.3,.1)))
+(gradefac = factor(grade))
+class(gradefac)
+summary(gradefac)
+
+(gradefacOD = factor(grade,ordered = T))
+summary(gradefacOD)
+
+(gradefacOD2 = factor(grade,ordered = T,c('C','B','A','D')))
+summary(gradefacOD2)
+
+(marks3 = ceiling(rnorm(30,60,5)))
+(studentX = data.frame(marks, gradefacOD2))
+boxplot(marks3 ~ gradefacOD2, data=studentX)
+gender = factor(sample(c('M','F'),size=30,replace=T))
+studentY = data.frame(marks,gradefacOD2,gender)
+boxplot(marks3 ~ gradefacOD2 + gender, data=studentY)
+aggregate(df1$marks, by=list(df1$gender), FUN = max)
 
 #Lists
 
