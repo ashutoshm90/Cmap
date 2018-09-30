@@ -86,6 +86,8 @@ studentY = data.frame(marks,gradefacOD2,gender)
 boxplot(marks3 ~ gradefacOD2 + gender, data=studentY)
 aggregate(df1$marks, by=list(df1$gender), FUN = max)
 
+library(dplyr)
+
 #Lists
 
 
