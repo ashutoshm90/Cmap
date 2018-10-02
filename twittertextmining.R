@@ -37,12 +37,13 @@ tweets
 tweets[1:10]
 #Another Topics
 #search.string <- "#indvseng"
-search.string <- "#asiacup"
+search.string <- "#kuchv"
 
 no.of.tweets <- 100
+tweets
 
 tweets <- searchTwitter(search.string, n=no.of.tweets,lang="en")
-tweets[1:5]
+tweets[70:80]
 
 #My Tweets : will change if you use your own account
 homeTimeline(n=15)  #my tweets
@@ -50,8 +51,8 @@ mentions(n=15)   # my tags
 mentions(n=5)
 
 #for user - 
-(tweets = userTimeline("sumanmohanty", n=10))
-userTimeline("drisha_sinha", n=5)
+(tweets = userTimeline("ashutoshm90", n=10))
+userTimeline("ashutoshm90", n=5)
 
 #------------------------------------
 ?userTimeline
@@ -83,6 +84,7 @@ sent.value <- get_sentiment(word.df)
 most.positive <- word.df[sent.value == max(sent.value)]
 most.positive
 most.negative<- word.df[sent.value <= min(sent.value)] 
+
 most.negative
 sent.value
 
