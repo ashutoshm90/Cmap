@@ -67,6 +67,7 @@ predict(tree, ndata, type='class')
 cbind(predict(tree, ndata, type='class'))
 predict(tree, ndata, type='prob')
 
+
 logitmodel = glm(placement ~ ., data=student, family = 'binomial')
 summary(logitmodel)
 logitmodel2 = glm(placement ~ age, data=student, family='binomial')

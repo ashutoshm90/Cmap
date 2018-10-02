@@ -108,3 +108,13 @@ course1[1] ; course1[5]
 #duration since independence
 (independencedays = Sys.Date() - as.Date('15-08-1947', '%d-%m-%Y'))
 independencedays/365  #years
+
+as.character(Sys.Date(), "%Y  %m %A")
+
+
+
+
+
+
+
+
